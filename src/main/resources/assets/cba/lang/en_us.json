@@ -1,0 +1,9 @@
+{
+  "tab.cba.title": "Crystal Beam Attractor",
+  "item.cba.beam_link_tool": "Beam Link Tool",
+  "item.cba.beam_link_tool.on_use": "Position saved",
+  "item.cba.beam_link_tool.on_entity_use": "Position linked",
+  "item.cba.beam_link_tool.cleared": "Link cleared",
+  "item.cba.beam_link_tool.description": "Use on a block to save target position. \nUse on an Ender Crystal to link the position.",
+  "item.cba.beam_link_tool.beam_target": "Current Target: %s"
+}
