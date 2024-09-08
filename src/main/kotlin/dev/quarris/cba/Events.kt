@@ -24,7 +24,7 @@ object Events {
 
         val tag = stack.getTagElement("BeamTarget")?:return
         val pos = NbtUtils.readBlockPos(tag)
-        crystal.beamTarget = pos
+        crystal.beamTarget = pos.below(2)
         event.entity.displayClientMessage(Component.translatable("item.cba.beam_link_tool.on_entity_use"), true)
     }
 
