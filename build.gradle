@@ -3,13 +3,15 @@ plugins {
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+    id 'com.matthewprenger.cursegradle' version '1.4.0'
+    id 'com.modrinth.minotaur' version '2.+'
     // Adds the Kotlin Gradle plugin
     id 'org.jetbrains.kotlin.jvm' version '2.0.0'
     // OPTIONAL Kotlin Serialization plugin
     //id 'org.jetbrains.kotlin.plugin.serialization' version '2.0.0'
 }
 
-version = mod_version
+version = "$minecraft_version-$mod_version"
 group = mod_group_id
 
 base {
@@ -161,4 +163,27 @@ publishing {
             url "file://${project.projectDir}/mcmodsrepo"
         }
     }
+}
+
+curseforge {
+    apiKey = System.getenv('CURSEFORGE_API_KEY')
+    project {
+        id = 'your_curseforge_project_id'
+        changelog = file('changelog.md').text
+        releaseType = 'release'
+        addGameVersion minecraft_version // Add the Minecraft versions you're targeting
+        mainArtifact(jar) {
+            displayName = "$mod_name v$project.version"
+        }
+    }
+}
+
+modrinth {
+    token = System.getenv('MODRINTH_API_PUBLISH')
+    projectId = 'crystal-beam-attractor'
+    versionNumber = project.version
+    versionType = 'release'
+    uploadFile = jar
+    gameVersions = [minecraft_version] // Add the Minecraft versions you're targeting
+    changelog = file('changelog.md').text
 }
