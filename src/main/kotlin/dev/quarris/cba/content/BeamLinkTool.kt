@@ -3,7 +3,6 @@ package dev.quarris.cba.content
 import net.minecraft.ChatFormatting
 import net.minecraft.nbt.NbtUtils
 import net.minecraft.network.chat.Component
-import net.minecraft.network.chat.Style
 import net.minecraft.world.InteractionResult
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack

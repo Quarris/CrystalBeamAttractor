@@ -166,9 +166,9 @@ publishing {
 }
 
 curseforge {
-    apiKey = System.getenv('CURSEFORGE_API_KEY')
     project {
-        id = 'your_curseforge_project_id'
+        apiKey = System.getenv('CURSEFORGE_API_PUBLISH')
+        id = '1099732'
         changelog = file('changelog.md').text
         releaseType = 'release'
         addGameVersion minecraft_version // Add the Minecraft versions you're targeting
